@@ -13,7 +13,7 @@ $b= "Bundar";
 </head>
 <body>
     <h2>
-        <i> <?php echo ' "'. $t .' saya  '. $b .', '. $b .' '. $t .'  saya." '; ?>
+        <i> <?php echo "\"$t saya $b, $b $t saya.\""; ?>
         </i>
     </h2>
 
