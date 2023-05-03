@@ -1,0 +1,78 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+    line-height: 1.65;
+}
+
+/* #navbarNavDropdown {
+    position: fixed;
+} */
+
+.navbar-container {
+    box-shadow: 0px 1px 30px darkgray;
+}
+
+.card-img-top {
+    height: 150px;
+}
+
+img.card-img-top {
+    object-fit: cover;
+}
+
+.content-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nomor-list {
+    font-size: 80px;
+    -webkit-text-stroke: 1px #686a70;
+    -webkit-text-fill-color: white;
+    width: 37px;
+    overflow: hidden;
+    line-height: 73px;
+    padding: 4px 10px;
+    transition: ease all 0.4s;
+}
+
+.warp-list-terpopuler {
+    position: relative;
+    border-bottom: 2px dotted #d8d8d8
+}
+
+
+.title-terpopuler {
+    width: calc(100% - 37px);
+    background-color: #fff;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #686a70;
+    transition: ease all 0.4s
+}
+
+.title-terpopuler.small h3 {
+    font-size: 14px;
+    color: #686a70;
+    margin: 0;
+    transition: ease all 0.4s;
+}
+
+footer {
+    color: white;
+    padding: 10px 100px;
+    background-color: grey;
+}
+
+.gambar img {
+    width: 100%;
+}
+
+.isi {
+    margin-top: 30px;
+}
