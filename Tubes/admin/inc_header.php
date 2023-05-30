@@ -1,4 +1,9 @@
 <?php
+session_start();
+if ($_SESSION['admin_username'] == '') {
+    header("location:login.php");
+    exit();
+}
 include("../inc/inc_koneksi.php");
 include("..//inc/inc_fungsi.php");
 ?>
@@ -10,7 +15,7 @@ include("..//inc/inc_fungsi.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Company Profile</title>
+    <title>Admin</title>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -37,6 +42,7 @@ include("..//inc/inc_fungsi.php");
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <style>
         .image-list-content .col-lg-3 {
             width: 100%;
@@ -58,7 +64,7 @@ include("..//inc/inc_fungsi.php");
     </style>
 </head>
 
-<body class="container">
+<body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -70,10 +76,13 @@ include("..//inc/inc_fungsi.php");
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Admin Halaman</a>
+                            <a class="nav-link active" aria-current="page" href="halaman.php">Halaman</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Logout>></a>
+                            <a class="nav-link active" aria-current="page" href="members.php">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Logout>></a>
                         </li>
                     </ul>
                 </div>

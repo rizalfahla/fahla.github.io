@@ -2,6 +2,22 @@
 include_once("../inc/inc_koneksi.php");
 include_once("../inc/inc_fungsi.php");
 
+if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
+    $id = $_COOKIE['id'];
+    $key = $_COOKIE['key'];
+
+    $result = mysqli_query($koneksi, "select * from members where id = '$id'");
+    $row = mysqli_fetch_assoc($result);
+
+    // cek cookie dan username
+    if ($key === hash('sha256', $row['email'])) {
+        $_SESSION['login'] = true;
+        $_SESSION['members_email'] = $row['email'];
+        $_SESSION['members_id'] = $row['id'];
+        $_SESSION['members_username'] = $row['username'];
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,13 +54,35 @@ include_once("../inc/inc_fungsi.php");
                 </a>
 
                 <div class=" d-flex justify-content-end collapse navbar-collapse" id="navbarScroll">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-3" type="search" placeholder="Cari Berita" aria-label="Search">
-                        <button class="btn btn-outline-dark" type="submit">Search</button>
+                    <form class="d-flex" action="<?php echo url_dasar() ?>/search.php" role="search">
+                        <div class="input-group">
+                            <input type="search" name="keyword" class="form-control" placeholder="Search"
+                                aria-label="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </form>
-                    <a href="login.php">
-                        <button class="btn btn-outline-dark m-2" type="submit">Masuk</button>
-                    </a>
+                    <?php if (isset($_SESSION['members_username'])) { ?>
+                        <div class="dropdown ms-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <?php echo ucwords($_SESSION['members_username']); ?>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="<?php echo url_dasar(); ?>/login/logout.php">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    <?php } else { ?>
+                        <a href="<?php echo url_dasar() ?>/login">
+                            <button class="btn btn-outline-dark m-2" type="submit">Signup
+                            </button>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
         </nav>
@@ -64,7 +102,7 @@ include_once("../inc/inc_fungsi.php");
                                 <a class="nav-link" href="<?php echo url_dasar() ?>#tranding">Tranding Topic</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo url_dasar() ?>#rekomendasi">Rekomendasi</a>
+                                <a class="nav-link" href="<?php echo url_dasar() ?>#rekomendasi">Recommendation</a>
                             </li>
                             <liv class="nav-item">
                                 <a href="<?php echo url_dasar() ?>#newsfeed" class="nav-link">News Feed

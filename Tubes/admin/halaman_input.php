@@ -101,86 +101,90 @@ if (isset($_POST['simpan'])) {
 
 
 ?>
-<h1>Halaman Admin Input Data</h1>
-<div class="mb-3 row">
-    <a href="halaman.php">
-        << Kembali ke halaman admin</a>
+
+<div class="container">
+    <h1>Halaman Admin Input Data</h1>
+    <div class="mb-3 row">
+        <a href="halaman.php">
+            << Kembali ke halaman admin</a>
+    </div>
+    <?php
+    if ($error) {
+        ?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo $error ?>
+        </div>
+        <?php
+    }
+    ?>
+    <?php
+    if ($sukses) {
+        ?>
+        <div class="alert alert-primary" role="alert">
+            <?php echo $sukses ?>
+        </div>
+        <?php
+    }
+    ?>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="mb-3 row">
+            <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="penulis" value="<?php echo $penulis ?>" name="penulis"
+                    autocomplete="off">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="judul" class="col-sm-2 col-form-label">Judul</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="judul" value="<?php echo $judul ?>" name="judul"
+                    autocomplete="off">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="kutipan" class="col-sm-2 col-form-label">Kutipan</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="kutipan" value="<?php echo $kutipan ?>" name="kutipan"
+                    autocomplete="off">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="isi" class="col-sm-2 col-form-label">Isi</label>
+            <div class="col-sm-10">
+                <textarea name="isi" class="form-control" id="summernote"><?php echo $isi ?></textarea>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="gambar" class="col-sm-2 col-form-label">Input Gambar</label>
+            <div class=" col-sm-10">
+                <img src="" alt="">
+                <?php
+                if ($gambar) {
+                    echo "<img src='../img/$gambar' style='max-height:100px;max-width:100px' >";
+                }
+                ?>
+                <input class="form-control" name="gambar" type="file" id="gambar">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
+            <select name="kategori" id="kategori" class="form-select form-select-lg mb-3"
+                aria-label=".form-select-lg example">
+                <option selected>Pilihan</option>
+                <option value="topic">Topic</option>
+                <option value="trending_topic">Trending Topic</option>
+                <option value="news_feed">News Feed</option>
+                <option value="rekomendasi">Rekomendasi Untuk Anda</option>
+            </select>
+        </div>
+        <br>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <input type="submit" name="simpan" value="Simpan Data" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
 </div>
-<?php
-if ($error) {
-    ?>
-    <div class="alert alert-danger" role="alert">
-        <?php echo $error ?>
-    </div>
-    <?php
-}
-?>
-<?php
-if ($sukses) {
-    ?>
-    <div class="alert alert-primary" role="alert">
-        <?php echo $sukses ?>
-    </div>
-    <?php
-}
-?>
-<form action="" method="post" enctype="multipart/form-data">
-    <div class="mb-3 row">
-        <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="penulis" value="<?php echo $penulis ?>" name="penulis"
-                autocomplete="off">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="judul" class="col-sm-2 col-form-label">Judul</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="judul" value="<?php echo $judul ?>" name="judul"
-                autocomplete="off">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="kutipan" class="col-sm-2 col-form-label">Kutipan</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="kutipan" value="<?php echo $kutipan ?>" name="kutipan"
-                autocomplete="off">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="isi" class="col-sm-2 col-form-label">Isi</label>
-        <div class="col-sm-10">
-            <textarea name="isi" class="form-control" id="summernote"><?php echo $isi ?></textarea>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="gambar" class="col-sm-2 col-form-label">Input Gambar</label>
-        <div class=" col-sm-10">
-            <img src="" alt="">
-            <?php
-            if ($gambar) {
-                echo "<img src='../img/$gambar' style='max-height:100px;max-width:100px' >";
-            }
-            ?>
-            <input class="form-control" name="gambar" type="file" id="gambar">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
-        <select name="kategori" id="kategori" class="form-select form-select-lg mb-3"
-            aria-label=".form-select-lg example">
-            <option selected>Pilihan</option>
-            <option value="topic">Topic</option>
-            <option value="trending_topic">Trending Topic</option>
-            <option value="news_feed">News Feed</option>
-            <option value="rekomendasi">Rekomendasi Untuk Anda</option>
-        </select>
-    </div>
-    <br>
-    <div class="mb-3 row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-10">
-            <input type="submit" name="simpan" value="Simpan Data" class="btn btn-primary" />
-        </div>
-    </div>
-</form>
+
 <?php include("inc_footer.php") ?>

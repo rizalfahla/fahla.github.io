@@ -16,7 +16,7 @@ include_once("../inc/inc_fungsi.php");
             </div>
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Kategori</h5>
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Category</h5>
                 <p>
                     <a href="<?php echo url_dasar() ?>#news" class="text-white" style="text-decoration: none;">News</a>
                 </p>
@@ -26,7 +26,7 @@ include_once("../inc/inc_fungsi.php");
                 </p>
                 <p>
                     <a href="<?php echo url_dasar() ?>#rekomendasi" class="text-white"
-                        style="text-decoration: none;">Rekomendasi untuk anda</a>
+                        style="text-decoration: none;">Recommendation For You</a>
                 </p>
                 <p>
                     <a href="<?php echo url_dasar() ?>#newsfeed" class="text-white" style="text-decoration: none;">News
