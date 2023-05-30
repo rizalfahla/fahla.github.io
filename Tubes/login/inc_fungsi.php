@@ -129,7 +129,7 @@ function buat_link_halaman($id)
     $r1 = mysqli_fetch_array($q1);
     $judul = bersihkan_judul($r1['judul']);
     // http://localhost/website-company-profile/halaman.php/8/judul
-    return url_dasar() . "isi/$id/$judul";
+    return url_dasar() . "/isi.php/$id/$judul";
 }
 
 function dapatkan_id()
