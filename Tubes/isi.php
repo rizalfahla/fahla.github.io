@@ -69,7 +69,7 @@ require('index_navbar.php');
                     </div>
                 </div>
                 <div class="gambar">
-                    <img src="../../../img/<?= news_gambar($r1['id']) ?>" class="img-fluid w-full">
+                    <img src="<?php echo url_dasar() ?>/img/<?= news_gambar($r1['id']) ?>" class="img-fluid w-full">
                 </div>
 
                 <div class="isi">

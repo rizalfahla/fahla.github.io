@@ -26,7 +26,7 @@ if (isset($_GET['keyword'])) {
                 <div class="card">
                     <a href="<?php echo buat_link_halaman($value[0]) ?>"
                         class="text text-decoration-none nuaing link link-info">
-                        <img src="../img/<?= news_gambar($value[0]) ?>" class="card-img-top" />
+                        <img src="<?php echo url_dasar() ?>/img/<?= news_gambar($value[0]) ?>" class="card-img-top" />
                     </a>
                     <div class="card-body">
                         <a href="<?php echo buat_link_halaman($value[0]) ?>"
