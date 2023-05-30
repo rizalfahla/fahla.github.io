@@ -1,6 +1,6 @@
 <?php
-include_once("../inc/inc_koneksi.php");
-include_once("../inc/inc_fungsi.php");
+include_once("inc/inc_koneksi.php");
+include_once("inc/inc_fungsi.php");
 
 if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
     $id = $_COOKIE['id'];
@@ -40,7 +40,7 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
     <!-- cdjns -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- jquery -->
-    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
 
 </head>
 

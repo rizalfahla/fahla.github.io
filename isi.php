@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once("../inc/inc_koneksi.php");
-include_once("../inc/inc_fungsi.php");
+include_once("inc/inc_koneksi.php");
+include_once("inc/inc_fungsi.php");
 //http://localhost/pw2023_223040125/Tubes/halaman/isi.php/20/12-jenderal-tni-jadi-staf-khusus-baru-ksad-dudung-ini-daftarnya 
 //print_r($_SERVER);
 $id = dapatkan_id();
