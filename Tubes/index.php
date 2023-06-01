@@ -99,7 +99,7 @@ include_once("inc/inc_fungsi.php");
                                     <a href="<?php echo buat_link_halaman($value[0]) ?>"
                                         class="text text-decoration-none link link-warning">
                                         <h5 class="card-title">
-                                            <?= potongkata($value[2], 30) ?>
+                                            <?= potongkata($value[2], 29) ?>
                                         </h5>
                                     </a>
                                     <p class="card-text">

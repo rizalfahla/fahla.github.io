@@ -60,20 +60,16 @@ include_once("inc/inc_fungsi.php");
                 <div class="text-center text-md-right">
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
-                            <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px ;"><i
-                                    class="fab fa-facebook"></i></a>
+                            <a href="https://github.com/rizalfahla" class="btn-floating btn-sm text-white"
+                                style="font-size:23px ;"><i class="fab fa-github"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px ;"><i
-                                    class="fab fa-twitter"></i></a>
+                            <a href="https://twitter.com/rizalfahla" class="btn-floating btn-sm text-white"
+                                style="font-size:23px ;"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px ;"><i
-                                    class="fab fa-instagram"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px ;"><i
-                                    class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/rizalfahla/" class="btn-floating btn-sm text-white"
+                                style="font-size:23px ;"><i class="fab fa-instagram"></i></a>
                         </li>
                     </ul>
 

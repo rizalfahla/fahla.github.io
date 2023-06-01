@@ -67,6 +67,7 @@ if (isset($_POST['register'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/1.png" type="image/x-icon">
     <title>Register</title>
 
     <!-- Font Icon -->
@@ -123,6 +124,7 @@ if (isset($_POST['register'])) {
                     </div>
                     <div class="signup-image">
                         <figure><img src="images/1.png" alt="sing up image"></figure>
+                        <a href="index.php" class="signup-image-link">Sign in to an existing account</a>
                     </div>
                 </div>
             </div>

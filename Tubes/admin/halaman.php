@@ -30,10 +30,16 @@ if ($op == 'delete') {
 
 ?>
 <div class="container">
-    <h1>Halaman Admin</h1>
+    <h1>Admin Page</h1>
     <p>
         <a href="halaman_input.php">
-            <input type="button" class="btn btn-primary" value="buat halaman baru" />
+            <input type="button" class="btn btn-primary" value="Create a new page" />
+        </a>
+    </p>
+
+    <p>
+        <a href="print.php" target="_blank">
+            <input type="button" class="btn btn-secondary" value="Print PDF" />
         </a>
     </p>
     <?php
@@ -46,11 +52,11 @@ if ($op == 'delete') {
         <<?php } ?>
         <form class="row g-3" method="get">
             <div class="col-auto">
-                <input type="text" class="form-control" placeholder="Masukkan Kata Kunci" name="katakunci"
+                <input type="text" class="form-control" placeholder="Enter keywords" name="katakunci"
                     value="<?php echo $katakunci ?>" autocomplete="off" />
             </div>
             <div class="col-auto">
-                <input type="submit" name="cari" value="Cari Tulisan" class="btn btn-secondary">
+                <input type="submit" name="cari" value="Search" class="btn btn-secondary">
             </div>
         </form>
 
@@ -112,7 +118,7 @@ if ($op == 'delete') {
                                 Delete
                             </a>
                             <a href="halaman_komentar.php?id=<?= $r1['id'] ?>" class="btn btn-sm btn-primary">
-                                Komentar
+                                Comment
                             </a>
                         </td>
                     </tr>
