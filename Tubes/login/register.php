@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once("inc_koneksi.php");
-include_once("inc_fungsi.php");
+include_once("../inc/inc_koneksi.php");
+include_once("../inc/inc_fungsi.php");
 ?>
 <?php
 $username = "";
@@ -18,7 +18,7 @@ if (isset($_POST['register'])) {
     $password2 = $_POST['password2'];
 
     if ($username == '' or $email == '' or $password == '' or $password2 == '') {
-        $err .= "<li>please enter all fields.</li>";
+        $err .= "<li>Please enter all fields.</li>";
     }
 
     //cek di db apakah email sudah ada atau belum

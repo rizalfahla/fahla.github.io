@@ -1,6 +1,5 @@
 <?php
 session_start();
-require('index_navbar.php');
 include_once("inc/inc_koneksi.php");
 include_once("inc/inc_fungsi.php");
 
@@ -47,11 +46,3 @@ if (isset($_GET['keyword'])) {
         <?php } ?>
     </div>
 </div>
-
-
-
-
-
-<?php
-require('index_footer.php');
-?>

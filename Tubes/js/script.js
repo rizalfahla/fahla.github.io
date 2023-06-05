@@ -1,20 +1,18 @@
-// // ambil elemen2 yang dibutuhkan
-// var keyword = document.getElementById('keyword');
-// var tombolCari = document.getElementById('tombol-cari');
-// var container = document.getElementById('container');
+$(document).ready(function () {
 
-// keyword.addEventListener('keyup', function() {
-//     // buat object ajax
-//     var xhr = new XMLHttpRequest();
+        // event ketika keyword ditulis
+        $('#keyword').on('keyup', function () {
+            // ajax menggunakan load
+            // $('#container').load('ajax/mahasiswa.php?keyword=' + $('#keyword').val());
 
-//     // cek kesiapan ajax
-//     xhr.onreadystatechange = function(){
-//         if( xhr.readyState == 4 && xhr.status == 200){
-//             container.innerHTML = xhr.responseText;
-//         }
-//     }
+            // $.get()
+            $.get('search.php?keyword=' + $('#keyword').val(), function (data) {
 
-//     // eksekusi ajax
-//     xhr.open('GET', 'ajax/coba.txt', true);
-//     xhr.send();
-// });
+                $('#tampil').html(data);
+                $('.loader').hide();
+
+            });
+
+        });
+
+    });

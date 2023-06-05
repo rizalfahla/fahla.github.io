@@ -53,7 +53,9 @@ require('index_navbar.php');
                 <ol class="breadcrumb mt-3">
                     <li class=" breadcrumb-item"><a href=" <?php echo url_dasar() ?>/index.php"
                             class="text text-decoration-none">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <?php echo ucwords($r1['kategori']); ?>
+                    </li>
                 </ol>
                 <h1 class="judul row justify-content-center">
                     <?= $r1['judul']; ?>

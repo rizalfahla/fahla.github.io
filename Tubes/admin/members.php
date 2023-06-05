@@ -82,6 +82,10 @@ if ($op == 'delete') {
                             <?php
                         }
                         ?>
+                        <a href="members.php?op=delete&id=<?= $r1['id']; ?>" class="btn btn-sm btn-danger"
+                            onclick="return confirm('Apakah yakin mau hapus data ?')">
+                            Delete
+                        </a>
                     </td>
                 </tr>
                 <?php

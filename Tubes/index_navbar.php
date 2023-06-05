@@ -49,15 +49,15 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
     <div class="navbar-container">
         <nav class="container navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="<?php echo url_dasar() ?>#home">
                     <img src="<?php echo url_dasar() ?>/img/1.png" alt="Bootstrap" width="100px">
                 </a>
 
                 <div class=" d-flex justify-content-end collapse navbar-collapse" id="navbarScroll">
                     <form class="d-flex" action="<?php echo url_dasar() ?>/search.php" role="search">
                         <div class="input-group">
-                            <input type="search" name="keyword" class="form-control" placeholder="Search"
-                                aria-label="Search">
+                            <input type="search" name="keyword" id="keyword" class="form-control" placeholder="Search"
+                                aria-label="Search" autocomplete="off">
                             <div class="input-group-btn">
                                 <button class="btn btn-primary" type="submit">
                                     <i class="fa fa-search"></i>
@@ -99,7 +99,7 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
                                 <a class="nav-link" href="<?php echo url_dasar() ?>#news">News</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo url_dasar() ?>#tranding">Tranding Topic</a>
+                                <a class="nav-link" href="<?php echo url_dasar() ?>#tranding">Trending Topic</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo url_dasar() ?>#rekomendasi">Recommendation</a>

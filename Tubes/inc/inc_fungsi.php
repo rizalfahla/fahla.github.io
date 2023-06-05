@@ -2,7 +2,7 @@
 function list_news()
 {
     global $koneksi;
-    $sql1 = "select * from halaman where kategori = 'topic' limit 4";
+    $sql1 = "select * from halaman where kategori = 'topic' limit 5";
     $q1 = mysqli_query($koneksi, $sql1);
     return mysqli_fetch_all($q1);
 }
