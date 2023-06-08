@@ -34,9 +34,9 @@ function newsFeed()
 function url_dasar()
 {
     /* harus ganti ketika di publish ke server */
-    // return 'http://localhost/pw2023_223040125/Tubes';
+    return 'http://localhost/pw2023_223040125/Tubes';
     /* ini untuk setting di server */
-    return 'http://kopetnews.rf.gd';
+    /*  return 'http://kopetnews.rf.gd'; */
 }
 
 function bersihkan_judul($judul)
