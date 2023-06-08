@@ -33,8 +33,10 @@ function newsFeed()
 
 function url_dasar()
 {
-    $url_dasar = "http://" . $_SERVER['SERVER_NAME'] . dirname($_SERVER['SCRIPT_NAME']);
-    return $url_dasar;
+    /* harus ganti ketika di publish ke server */
+    // return 'http://localhost/pw2023_223040125/Tubes';
+    /* ini untuk setting di server */
+    return 'http://kopetnews.rf.gd';
 }
 
 function bersihkan_judul($judul)
@@ -44,6 +46,8 @@ function bersihkan_judul($judul)
     $judul_baru = str_replace(" ", "-", $judul_baru);
     return $judul_baru;
 }
+
+
 function buat_link_halaman($id)
 {
     global $koneksi;

@@ -72,8 +72,7 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
                                 <?php echo ucwords($_SESSION['members_username']); ?>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?php echo url_dasar(); ?>/login/ganti.php">Profile</a>
-                                </li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="<?php echo url_dasar(); ?>/login/logout.php">Logout</a>
                                 </li>
                             </ul>

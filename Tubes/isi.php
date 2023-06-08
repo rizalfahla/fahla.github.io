@@ -4,14 +4,14 @@ include_once("inc/inc_koneksi.php");
 include_once("inc/inc_fungsi.php");
 //http://localhost/pw2023_223040125/Tubes/halaman/isi.php/20/12-jenderal-tni-jadi-staf-khusus-baru-ksad-dudung-ini-daftarnya 
 //print_r($_SERVER);
-$id = dapatkan_id();
+$idHalaman = dapatkan_id();
 
-$sql1 = "select * from halaman where id = '$id'";
+$sql1 = "select * from halaman where id = '$idHalaman'";
 $q1 = mysqli_query($koneksi, $sql1);
 $n1 = mysqli_num_rows($q1);
 $r1 = mysqli_fetch_array($q1);
 
-$sqlGetKomentar = "select *from komentar a join members b on a.id_member = b.id where a.id_halaman = '" . $id . "'";
+$sqlGetKomentar = "select *from komentar a join members b on a.id_member = b.id where a.id_halaman = '" . $idHalaman . "'";
 $q2 = mysqli_query($koneksi, $sqlGetKomentar);
 
 $judul_halaman = $r1['judul'];
@@ -23,8 +23,8 @@ if (isset($_POST['description'])) {
     $id_halaman = $_POST['id_halaman'];
     $description = $_POST['description'];
 
-    $query = "INSERT INTO komentar (id_member, id_halaman, description) VALUES
-    ('$id_member', '$id_halaman', '$description')";
+    $query = "INSERT INTO komentar (id_member, id_halaman, description, created_at) VALUES
+    ('$id_member', '$id_halaman', '$description', '" . date('Y-m-d H:i:s') . "')";
 
     mysqli_query($koneksi, $query);
     $successKomentar = mysqli_affected_rows($koneksi);
@@ -119,7 +119,7 @@ require('index_navbar.php');
                             </span><br>
                             <i style="font-size: 10px;">
                                 <?php echo date('d F Y H:i', strtotime($obj->created_at)); ?>
-                                </p>
+                            </i>
                         </div>
                     </div>
                 <?php } ?>
@@ -135,7 +135,7 @@ require('index_navbar.php');
             <div class="mb-3">
                 <form method="post">
                     <input type="hidden" name="id_member" value="<?php echo $_SESSION['members_id']; ?>">
-                    <input type="hidden" name="id_halaman" value="<?php echo $id; ?>">
+                    <input type="hidden" name="id_halaman" value="<?php echo $idHalaman; ?>">
                     <textarea class="form-control" id="description" name="description" placeholder="Enter Your Comment Here"
                         rows="3" required></textarea>
                     <button type="submit" class="btn btn-primary mt-3"><span class="fa fa-save"></span> Send</button>
